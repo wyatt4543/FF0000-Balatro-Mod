@@ -49,14 +49,14 @@ SMODS.Joker {
                     			func = function()
                         
                         			local current_dollars = G.GAME.dollars
-                        			local target_dollars = G.GAME.dollars + 1
+                        			local target_dollars = G.GAME.dollars + card.ability.extra.money
                         			local dollar_value = target_dollars - current_dollars
                         			ease_dollars(dollar_value)
                         			card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "+"..tostring(1), colour = G.C.MONEY})
                         			return true
                     			end,
                     			extra = {
-                        			Xmult = 2
+                        			Xmult = card.ability.extra.Xmult
                     			}
                 		}
             		end
