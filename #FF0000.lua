@@ -20,7 +20,8 @@ SMODS.Joker {
 	loc_txt = {
 		name = 'Yellowprint',
 		text = {
-			"Copies ability of {C:attention}Joker{} to the left"
+			"Copies ability of",
+			"{C:attention}Joker{} to the left"
 		}
 	},
 	rarity = 3,
