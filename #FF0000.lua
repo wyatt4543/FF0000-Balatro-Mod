@@ -20,10 +20,7 @@ SMODS.Joker {
 	loc_txt = {
 		name = 'Yellowprint',
 		text = {
-			"Gains {C:chips}+#2#{} Chips",
-			"if played hand",
-			"contains a {C:attention}Straight{}",
-			"{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)"
+			"Copies ability of {C:attention}Joker{} to the left"
 		}
 	},
 }
