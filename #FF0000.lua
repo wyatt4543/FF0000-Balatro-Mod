@@ -14,6 +14,14 @@ SMODS.Atlas {
 	py = 186
 }
 
+--Create icon atlas
+SMODS.Atlas {
+    key = "modicon",
+    path = "icon.png",
+    px = 34,
+    py = 34
+}
+
 --Yellowprint joker
 SMODS.Joker {
 	key = 'yellowprint',
