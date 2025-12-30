@@ -37,6 +37,9 @@ SMODS.Joker {
 	atlas = "JokerAtlas",
 	pos = { x = 1, y = 0 },
 	cost = 8,
+	loc_vars = function(self, info_queue, card)
+		return { vars = { card.ability.extra.money, card.ability.extra.Xmult } }
+	end,
 
 	calculate = function(self, card, context)
         
