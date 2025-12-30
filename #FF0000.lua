@@ -24,7 +24,7 @@ SMODS.Atlas {
 
 --Dad Braggin' joker
 SMODS.Joker {
-	key = 'dadbraggin',
+	key = 'dad_braggin',
 	loc_txt = {
 		name = "Dad Braggin'",
 		text = {
