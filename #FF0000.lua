@@ -29,7 +29,7 @@ SMODS.Joker {
 		name = "Dad Braggin'",
 		text = {
 			"Each {C:attention}King{} gives {C:money}$#1#{} when scored",
-			"{X:mult,C:white} X#2# {} Mult for each modifier it has"
+			"{X:money,C:white} X#2# {} {C:money}${} for each modifier it has"
 		}
 	},
 	config = { extra = { money = 1, Xmult = 2 } },
