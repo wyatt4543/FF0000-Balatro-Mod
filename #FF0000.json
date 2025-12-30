@@ -1,0 +1,13 @@
+{
+    "id": "red_mod",
+    "name": "#FF0000",
+    "author": ["Why Awesome", "Redjd"],
+    "description": "Creates some new jokers and decks for some extra fun!",
+    "prefix": "redball",
+    "main_file": "#FF0000.lua",
+    "badge_colour": "ff0000",
+    "version": "1.0.0",
+    "dependencies": [
+        "Steamodded (>=1.0.0~BETA-1016c)"
+    ]
+}
