@@ -45,7 +45,7 @@ SMODS.Joker {
 		return { vars = { card.ability.extra.num_cards } }
     	end,
 	calculate = function(self, card, context)
-        	if context.cardarea == G.jokers and context.joker_main  then
+        	if context.cardarea == G.jokers and context.joker_main and not context.blueprint then
             		if (function()
                 		local count = 0
                 		for _, playing_card in pairs(context.scoring_hand or {}) do
@@ -57,15 +57,25 @@ SMODS.Joker {
             		end)() then
                 		return {
                     
-                    			func = function()
-                        
-                        			local current_dollars = G.GAME.dollars
-                        			local target_dollars = G.GAME.dollars + 5
-                        			local dollar_value = target_dollars - current_dollars
-                        			ease_dollars(dollar_value)
-                        			card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "+"..tostring(5), colour = G.C.MONEY})
-                        			return true
-                    			end
+                    			local sevens = 0
+            				for _, scored_card in ipairs(context.scoring_hand) do
+                				if scored_card:get_id() == 7 then
+                    					sevens = sevens + 1
+                    					scored_card:set_ability('m_lucky', nil, true)
+                    					G.E_MANAGER:add_event(Event({
+                        					func = function()
+                            					scored_card:juice_up()
+                            					return true
+                        				end
+                    					}))
+                				end
+            				end
+            				if sevens > 0 then
+                				return {
+                    					message = localize('k_lucky'),
+                    					colour = G.C.MONEY
+                				}
+            				end
                 		}
             		end
         	end
