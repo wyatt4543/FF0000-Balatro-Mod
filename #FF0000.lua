@@ -30,7 +30,7 @@ SMODS.Joker {
 		text = {
 			"If played hand contains",
 			"at least {C:attention}#1#{} scored {C:attention}7s{}",
-			"give them the {C:attention}Lucky{} enhancement"
+			"make them {C:attention}Lucky{}"
 		}
 	},
 	config = { extra = { num_cards = 3 } },
