@@ -22,6 +22,22 @@ SMODS.Atlas {
     py = 34
 }
 
+--The Original Gambling joker
+SMODS.Joker {
+	key = 'og_gambling',
+	loc_txt = {
+		name = 'The Original Gambling',
+		text = {
+			"If your hand has at least three scored sevens",
+			"give them the lucky enhancement"
+		}
+	},
+	rarity = 1,
+	atlas = "JokerAtlas",
+	pos = { x = 0, y = 0 },
+	cost = 7,
+}
+
 --Dad Braggin' joker
 SMODS.Joker {
 	key = 'dad_braggin',
