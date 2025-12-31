@@ -61,7 +61,7 @@ SMODS.Joker {
                     					playing_card:set_ability('m_lucky', nil, true)
                     					G.E_MANAGER:add_event(Event({
                         					func = function()
-                            					scored_card:juice_up()
+                            					playing_card:juice_up()
                             					return true
                         				end
                     					}))
