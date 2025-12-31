@@ -29,18 +29,48 @@ SMODS.Joker {
 		name = 'The Original Gambling',
 		text = {
 			"If played hand contains",
-			"at least {C:attention}3{} scored {C:attention}7s{}",
+			"at least {C:attention}#1#{} scored {C:attention}7s{}",
 			"give each {C:attention}7{}",
 			"the {C:attention}Lucky{} enhancement"
 		}
 	},
+	config = { extra = { num_cards = 3 } },
 	rarity = 1,
 	atlas = "JokerAtlas",
 	pos = { x = 0, y = 0 },
 	cost = 7,
 	loc_vars = function(self, info_queue, card)
         	info_queue[#info_queue + 1] = G.P_CENTERS.m_lucky
+
+		return { vars = { card.ability.extra.num_cards } }
+    	end,
+	calculate = function(self, card, context)
+        	if context.cardarea == G.jokers and context.joker_main  then
+            		if (function()
+                		local count = 0
+                		for _, playing_card in pairs(context.scoring_hand or {}) do
+                    			if playing_card:get_id() == 7 then
+                        			count = count + 1
+                    			end
+                		end
+                		return count >= card.ability.extra.num_cards
+            		end)() then
+                		return {
+                    
+                    			func = function()
+                        
+                        			local current_dollars = G.GAME.dollars
+                        			local target_dollars = G.GAME.dollars + 5
+                        			local dollar_value = target_dollars - current_dollars
+                        			ease_dollars(dollar_value)
+                        			card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "+"..tostring(5), colour = G.C.MONEY})
+                        			return true
+                    			end
+                		}
+            		end
+        	end
     	end
+
 }
 
 --Dad Braggin' joker
