@@ -156,3 +156,20 @@ SMODS.Joker {
         	end
     	end
 }
+
+--Broken Hourglass joker
+SMODS.Joker {
+	key = 'hourglass',
+	loc_txt = {
+		name = 'Broken Hourglass',
+		text = {
+			"{C:attention}Jokers{} never reset"
+		}
+	},
+	rarity = 4,
+	atlas = "JokerAtlas",
+	pos = { x = 0, y = 0 },
+	cost = 10,
+
+	
+}
