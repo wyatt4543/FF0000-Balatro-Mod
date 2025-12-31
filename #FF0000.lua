@@ -56,9 +56,9 @@ SMODS.Joker {
                 		return count >= card.ability.extra.num_cards
             		end)() then
                 		return {
-            				for _, scored_card in ipairs(context.scoring_hand) do
-                				if scored_card:get_id() == 7 then
-                    					scored_card:set_ability('m_lucky', nil, true)
+            				for _, playing_card in ipairs(context.scoring_hand or {}) do
+                				if playing_card:get_id() == 7 then
+                    					playing_card:set_ability('m_lucky', nil, true)
                     					G.E_MANAGER:add_event(Event({
                         					func = function()
                             					scored_card:juice_up()
