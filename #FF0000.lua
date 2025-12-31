@@ -9,9 +9,9 @@ SMODS.Atlas {
 	-- The name of the file, for the code to pull the atlas from
 	path = "JokerAtlas.png",
 	-- Width of each sprite in 1x size
-	px = 138,
+	px = 69,
 	-- Height of each sprite in 1x size
-	py = 186
+	py = 93
 }
 
 --Create icon atlas
