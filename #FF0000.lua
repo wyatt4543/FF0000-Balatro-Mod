@@ -28,14 +28,19 @@ SMODS.Joker {
 	loc_txt = {
 		name = 'The Original Gambling',
 		text = {
-			"If your hand has at least three scored sevens",
-			"give them the lucky enhancement"
+			"If played hand contains",
+			"at least {C:attention}3{} scored {C:attention}7s{}",
+			"give each {C:attention}7{}",
+			"the {C:attention}Lucky{} enhancement"
 		}
 	},
 	rarity = 1,
 	atlas = "JokerAtlas",
 	pos = { x = 0, y = 0 },
 	cost = 7,
+	loc_vars = function(self, info_queue, card)
+        	info_queue[#info_queue + 1] = G.P_CENTERS.m_lucky
+    	end
 }
 
 --Dad Braggin' joker
