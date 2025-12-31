@@ -56,11 +56,8 @@ SMODS.Joker {
                 		return count >= card.ability.extra.num_cards
             		end)() then
                 		return {
-                    
-                    			local sevens = 0
             				for _, scored_card in ipairs(context.scoring_hand) do
                 				if scored_card:get_id() == 7 then
-                    					sevens = sevens + 1
                     					scored_card:set_ability('m_lucky', nil, true)
                     					G.E_MANAGER:add_event(Event({
                         					func = function()
@@ -70,12 +67,8 @@ SMODS.Joker {
                     					}))
                 				end
             				end
-            				if sevens > 0 then
-                				return {
-                    					message = localize('k_lucky'),
-                    					colour = G.C.MONEY
-                				}
-            				end
+            				message = localize('k_lucky'),
+                    			colour = G.C.MONEY
                 		}
             		end
         	end
