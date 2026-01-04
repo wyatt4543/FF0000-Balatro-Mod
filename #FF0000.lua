@@ -22,6 +22,30 @@ SMODS.Atlas {
     py = 34
 }
 
+--Uh Oh! All 0 joker
+SMODS.Joker {
+	key = "uhoh",
+	loc_txt = {
+		name = 'Uh Oh! All 0',
+		text = {
+			"Sets all {C:attention}listed{}",
+			"probabilities to 0",
+			"(ex: 1 in 3 -> 0 in 3)"
+		}
+	},
+	rarity = 1,
+	cost = 4,
+	atlas = "JokerAtlas",
+	pos = { x = 3, y = 0 },
+	calculate = function(self, card, context)
+        	if context.mod_probability and not context.blueprint then
+			return {
+                		numerator = context.numerator * 0
+			}
+        	end
+    	end
+}
+
 --The Original Gambling joker
 SMODS.Joker {
 	key = 'og_gambling',
