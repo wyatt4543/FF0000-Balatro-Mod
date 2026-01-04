@@ -29,8 +29,8 @@ SMODS.Joker {
 		name = 'Uh Oh! All 0',
 		text = {
 			"Sets all {C:attention}listed{}",
-			"probabilities to 0",
-			"(ex: 1 in 3 -> 0 in 3)"
+			"{C:green,E:1}probabilities{} to {C:attention}0{}",
+			"{C:inactive}(ex:{} {C:green}1 in 3{} {C:inactive}->{} {C:green}0 in 3{}{C:inactive}){}"
 		}
 	},
 	rarity = 1,
