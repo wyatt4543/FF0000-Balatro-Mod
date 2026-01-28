@@ -192,6 +192,7 @@ SMODS.Joker {
 	},
 	rarity = 4,
 	atlas = "JokerAtlas",
-	pos = { x = 0, y = 0 },
+	pos = { x = 4, y = 0 },
+	soul_pos = { x = 5, y = 0 },
 	cost = 20,
 }
